@@ -15,7 +15,7 @@ struct FeedModel {
     let image: URL?
 }
 
-class ViewController: ASViewController<ASTableNode> {
+class FeedTableVC: ASViewController<ASTableNode> {
 
     private let tableNode = ASTableNode()
     
@@ -25,12 +25,12 @@ class ViewController: ASViewController<ASTableNode> {
     private var didScroll = false
     
     let color: [UIColor] = [
-        .black,
+        .purple,
         .blue,
         .white,
         .yellow,
         .red,
-        .green,
+        .brown,
         .gray
     ]
     
@@ -103,7 +103,7 @@ class ViewController: ASViewController<ASTableNode> {
     
 }
 
-extension ViewController: ASTableDelegate, ASTableDataSource {
+extension FeedTableVC: ASTableDelegate, ASTableDataSource {
     
     func numberOfSections(in tableNode: ASTableNode) -> Int {
         return 1
@@ -114,7 +114,7 @@ extension ViewController: ASTableDelegate, ASTableDataSource {
     }
     
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-        let cellNode = VerticalStackCellNode()
+        let cellNode = FeedCellNode()
         cellNode.configure(row: indexPath.row, feed: feedData[indexPath.row])
         cellNode.backgroundColor = color[Int.random(in: 0..<color.count)]
         return cellNode

@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08CB604CAC1A756CBAA6F060 /* Pods_TryTexture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A468DBDF8A6D5608ADD28A /* Pods_TryTexture.framework */; };
-		D085507C21CCFEF6005E4728 /* ASCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085507B21CCFEF6005E4728 /* ASCellNode.swift */; };
+		D085507C21CCFEF6005E4728 /* FeedCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085507B21CCFEF6005E4728 /* FeedCellNode.swift */; };
 		D0B4F49D21CCD312006D871D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49C21CCD312006D871D /* AppDelegate.swift */; };
-		D0B4F49F21CCD312006D871D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49E21CCD312006D871D /* ViewController.swift */; };
-		D0B4F4A221CCD312006D871D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A021CCD312006D871D /* Main.storyboard */; };
+		D0B4F49F21CCD312006D871D /* FeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49E21CCD312006D871D /* FeedTableVC.swift */; };
 		D0B4F4A421CCD313006D871D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A321CCD313006D871D /* Assets.xcassets */; };
 		D0B4F4A721CCD313006D871D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,11 +18,10 @@
 /* Begin PBXFileReference section */
 		321AE4CC9950F2CB89342783 /* Pods-TryTexture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryTexture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture.debug.xcconfig"; sourceTree = "<group>"; };
 		43A468DBDF8A6D5608ADD28A /* Pods_TryTexture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TryTexture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D085507B21CCFEF6005E4728 /* ASCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCellNode.swift; sourceTree = "<group>"; };
+		D085507B21CCFEF6005E4728 /* FeedCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellNode.swift; sourceTree = "<group>"; };
 		D0B4F49921CCD312006D871D /* TryTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B4F49C21CCD312006D871D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0B4F49E21CCD312006D871D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D0B4F4A121CCD312006D871D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0B4F49E21CCD312006D871D /* FeedTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableVC.swift; sourceTree = "<group>"; };
 		D0B4F4A321CCD313006D871D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0B4F4A621CCD313006D871D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0B4F4A821CCD313006D871D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,11 +80,10 @@
 			children = (
 				D0B4F4A821CCD313006D871D /* Info.plist */,
 				D0B4F49C21CCD312006D871D /* AppDelegate.swift */,
-				D085507B21CCFEF6005E4728 /* ASCellNode.swift */,
-				D0B4F49E21CCD312006D871D /* ViewController.swift */,
+				D085507B21CCFEF6005E4728 /* FeedCellNode.swift */,
+				D0B4F49E21CCD312006D871D /* FeedTableVC.swift */,
 				D0B4F4A321CCD313006D871D /* Assets.xcassets */,
 				D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */,
-				D0B4F4A021CCD312006D871D /* Main.storyboard */,
 			);
 			path = TryTexture;
 			sourceTree = "<group>";
@@ -153,7 +150,6 @@
 			files = (
 				D0B4F4A721CCD313006D871D /* LaunchScreen.storyboard in Resources */,
 				D0B4F4A421CCD313006D871D /* Assets.xcassets in Resources */,
-				D0B4F4A221CCD312006D871D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,23 +219,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B4F49F21CCD312006D871D /* ViewController.swift in Sources */,
+				D0B4F49F21CCD312006D871D /* FeedTableVC.swift in Sources */,
 				D0B4F49D21CCD312006D871D /* AppDelegate.swift in Sources */,
-				D085507C21CCFEF6005E4728 /* ASCellNode.swift in Sources */,
+				D085507C21CCFEF6005E4728 /* FeedCellNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D0B4F4A021CCD312006D871D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0B4F4A121CCD312006D871D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

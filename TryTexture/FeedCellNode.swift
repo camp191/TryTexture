@@ -6,10 +6,9 @@
 //  Copyright © 2561 Thanapat Sorralump. All rights reserved.
 //
 
-import Foundation
 import AsyncDisplayKit
 
-class VerticalStackCellNode: ASCellNode {
+class FeedCellNode: ASCellNode {
     
         let textData = [
             "สะบึมชินบัญชรเซอร์วิส ซาตานเอฟเฟ็กต์ซาบะฟรุตป๋อหลอ โรแมนติก กับดักเป่ายิงฉุบคอนโดบึม นิวส์ กาญจนาภิเษกซะโซนซีนีเพล็กซ์แกรนด์ รีทัชปิยมิตรสตีลแชมป์ ใช้งานจิ๊กซอว์แทคติคซะปิกอัพ ปักขคณนารีดไถแฟลชปาสคาล ก่อนหน้าอุปนายกโยเกิร์ตสลัม พีเรียดสตีลซากุระอวอร์ด ชัวร์ทริปช็อป สตรอเบอร์รีอัตลักษณ์ ปิกอัพทับซ้อนฮัม พรีเมียร์สแตนดาร์ด พ่อค้าบร็อคโคลี",
@@ -24,7 +23,8 @@ class VerticalStackCellNode: ASCellNode {
     
     func configure(row: Int, feed: FeedModel) {
         let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 20.0)]
-        userNameNode.attributedText = NSAttributedString(string: textData[Int.random(in: 0...4)], attributes: attrs)
+        let text = "\(row) - " + textData[Int.random(in: 0...4)]
+        userNameNode.attributedText = NSAttributedString(string: text, attributes: attrs)
         userNameNode.maximumNumberOfLines = 0
         userNameNode.truncationMode = .byTruncatingTail
         imageNode.url = feed.image
