@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08CB604CAC1A756CBAA6F060 /* Pods_TryTexture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A468DBDF8A6D5608ADD28A /* Pods_TryTexture.framework */; };
+		D085507C21CCFEF6005E4728 /* ASCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085507B21CCFEF6005E4728 /* ASCellNode.swift */; };
 		D0B4F49D21CCD312006D871D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49C21CCD312006D871D /* AppDelegate.swift */; };
 		D0B4F49F21CCD312006D871D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49E21CCD312006D871D /* ViewController.swift */; };
 		D0B4F4A221CCD312006D871D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A021CCD312006D871D /* Main.storyboard */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321AE4CC9950F2CB89342783 /* Pods-TryTexture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryTexture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture.debug.xcconfig"; sourceTree = "<group>"; };
+		43A468DBDF8A6D5608ADD28A /* Pods_TryTexture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TryTexture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D085507B21CCFEF6005E4728 /* ASCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCellNode.swift; sourceTree = "<group>"; };
 		D0B4F49921CCD312006D871D /* TryTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B4F49C21CCD312006D871D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B4F49E21CCD312006D871D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		D0B4F4A321CCD313006D871D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0B4F4A621CCD313006D871D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0B4F4A821CCD313006D871D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69FEC2B93466ECB34F1ACF8 /* Pods-TryTexture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryTexture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CB604CAC1A756CBAA6F060 /* Pods_TryTexture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		117B32AB786CF3E675C43785 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A468DBDF8A6D5608ADD28A /* Pods_TryTexture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BCF6DEA4DDDD555A41E0D53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				321AE4CC9950F2CB89342783 /* Pods-TryTexture.debug.xcconfig */,
+				E69FEC2B93466ECB34F1ACF8 /* Pods-TryTexture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D0B4F49021CCD312006D871D = {
 			isa = PBXGroup;
 			children = (
 				D0B4F49B21CCD312006D871D /* TryTexture */,
 				D0B4F49A21CCD312006D871D /* Products */,
+				7BCF6DEA4DDDD555A41E0D53 /* Pods */,
+				117B32AB786CF3E675C43785 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +80,13 @@
 		D0B4F49B21CCD312006D871D /* TryTexture */ = {
 			isa = PBXGroup;
 			children = (
+				D0B4F4A821CCD313006D871D /* Info.plist */,
 				D0B4F49C21CCD312006D871D /* AppDelegate.swift */,
+				D085507B21CCFEF6005E4728 /* ASCellNode.swift */,
 				D0B4F49E21CCD312006D871D /* ViewController.swift */,
-				D0B4F4A021CCD312006D871D /* Main.storyboard */,
 				D0B4F4A321CCD313006D871D /* Assets.xcassets */,
 				D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */,
-				D0B4F4A821CCD313006D871D /* Info.plist */,
+				D0B4F4A021CCD312006D871D /* Main.storyboard */,
 			);
 			path = TryTexture;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0B4F4AB21CCD313006D871D /* Build configuration list for PBXNativeTarget "TryTexture" */;
 			buildPhases = (
+				D76E2A4D12FC260418EB44FB /* [CP] Check Pods Manifest.lock */,
 				D0B4F49521CCD312006D871D /* Sources */,
 				D0B4F49621CCD312006D871D /* Frameworks */,
 				D0B4F49721CCD312006D871D /* Resources */,
+				CE08991F1C8061B14BFA67B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +159,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE08991F1C8061B14BFA67B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D76E2A4D12FC260418EB44FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TryTexture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0B4F49521CCD312006D871D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +225,7 @@
 			files = (
 				D0B4F49F21CCD312006D871D /* ViewController.swift in Sources */,
 				D0B4F49D21CCD312006D871D /* AppDelegate.swift in Sources */,
+				D085507C21CCFEF6005E4728 /* ASCellNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +369,13 @@
 		};
 		D0B4F4AC21CCD313006D871D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321AE4CC9950F2CB89342783 /* Pods-TryTexture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M47TVX487;
 				INFOPLIST_FILE = TryTexture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +389,13 @@
 		};
 		D0B4F4AD21CCD313006D871D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69FEC2B93466ECB34F1ACF8 /* Pods-TryTexture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M47TVX487;
 				INFOPLIST_FILE = TryTexture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
