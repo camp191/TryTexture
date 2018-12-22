@@ -27,11 +27,19 @@ struct FeedRandomGenerator {
         .gray
     ]
     
+    let imageURLS = [
+        URL(string: "https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg")!,
+        URL(string: "https://wallpaperbrowse.com/media/images/pexels-photo-248797.jpeg")!,
+        URL(string: "https://wallpaperbrowse.com/media/images/Dubai-Photos-Images-Oicture-Dubai-Landmarks-800x600.jpg")!,
+        URL(string: "https://wallpaperbrowse.com/media/images/Amazing_Bike_Stunt_Images_YMMeTtq.jpg")!,
+        URL(string: "https://wallpaperbrowse.com/media/images/images-13.jpg")!
+    ]
+    
     func generateData() -> [FeedModel] {
         var newFeeds: [FeedModel] = []
         for _ in 1...10 {
             let text = textData[Int.random(in: 0...4)]
-            let url = URL(string: "https://t0.staging.blockdit.com/photos/2018/12/5c1225911b39c709c8ad8dd5_profile_thumb.jpg")
+            let url = imageURLS[Int.random(in: 0..<imageURLS.count)]
             let backgroundColor = color[Int.random(in: 0...6)]
             let feedModel = FeedModel(text: text, image: url, backgroundColor: backgroundColor)
             newFeeds.append(feedModel)
