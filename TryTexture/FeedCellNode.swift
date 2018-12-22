@@ -14,13 +14,9 @@ class FeedCellNode: ASCellNode {
     private let imageNode = ASNetworkImageNode()
     
     func configure(row: Int, feed: FeedModel) {
-        let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 20.0)]
-        let text = "\(row) - " + feed.text
-        userNameNode.attributedText = NSAttributedString(string: text, attributes: attrs as [NSAttributedString.Key : Any])
-        userNameNode.maximumNumberOfLines = 0
-        userNameNode.truncationMode = .byTruncatingTail
-        
-        imageNode.url = feed.image
+        backgroundColor = feed.backgroundColor
+        setupTextNode(row: row, text: feed.text)
+        setupImageNode(url: feed.image)
     }
 
     override init() {
@@ -39,5 +35,17 @@ class FeedCellNode: ASCellNode {
         imageNode.style.preferredSize = CGSize(width: 80, height: 80)
 
         return headerStackSpec
+    }
+    
+    private func setupTextNode(row: Int, text: String) {
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 20.0)]
+        let textToShow = "\(row) - " + text
+        userNameNode.attributedText = NSAttributedString(string: textToShow, attributes: attrs as [NSAttributedString.Key : Any])
+        userNameNode.maximumNumberOfLines = 0
+        userNameNode.truncationMode = .byTruncatingTail
+    }
+    
+    private func setupImageNode(url: URL?) {
+        imageNode.url = url
     }
 }

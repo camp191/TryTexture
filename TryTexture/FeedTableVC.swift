@@ -8,11 +8,11 @@
 
 import UIKit
 import AsyncDisplayKit
-import Fakery
 
 struct FeedModel {
     let text: String
     let image: URL?
+    let backgroundColor: UIColor
 }
 
 class FeedTableVC: ASViewController<ASTableNode> {
@@ -20,9 +20,7 @@ class FeedTableVC: ASViewController<ASTableNode> {
     private let tableNode = ASTableNode()
     
     private var feedData: [FeedModel] = []
-    private let faker = Faker(locale: "en")
-    private let randoms = Randoms()
-    
+    private let feedGenerator = FeedRandomGenerator()
     private var isAddingData = false
     private var didScroll = false
     
@@ -51,8 +49,7 @@ class FeedTableVC: ASViewController<ASTableNode> {
         if isAddingData { return }
         DispatchQueue.global(qos: .background).async {
             self.isAddingData = true
-            
-            let newData = self.generateData()
+            let newData = self.feedGenerator.generateData()
             self.feedData.append(contentsOf: newData)
             let indexPaths = self.mapIndexPaths(newData: newData)
             
@@ -79,17 +76,6 @@ class FeedTableVC: ASViewController<ASTableNode> {
         return indexPaths
     }
     
-    private func generateData() -> [FeedModel] {
-        var newFeeds: [FeedModel] = []
-        for _ in 1...10 {
-            let text = randoms.textData[Int.random(in: 0...4)]
-            let url = URL(string: "https://t0.staging.blockdit.com/photos/2018/12/5c1225911b39c709c8ad8dd5_profile_thumb.jpg")
-            let feedModel = FeedModel(text: text, image: url)
-            newFeeds.append(feedModel)
-        }
-        return newFeeds
-    }
-    
 }
 
 extension FeedTableVC: ASTableDelegate, ASTableDataSource {
@@ -105,7 +91,6 @@ extension FeedTableVC: ASTableDelegate, ASTableDataSource {
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         let cellNode = FeedCellNode()
         cellNode.configure(row: indexPath.row, feed: feedData[indexPath.row])
-        cellNode.backgroundColor = randoms.color[Int.random(in: 0..<randoms.color.count)]
         return cellNode
     }
     
