@@ -7,6 +7,5 @@ target 'TryTexture' do
 
   # Pods for TryTexture
   pod "Texture"
-  pod 'Fakery'
 
 end
