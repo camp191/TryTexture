@@ -27,8 +27,10 @@ class FeedCellNode: ASCellNode {
         userNameNode.attributedText = NSAttributedString(string: text, attributes: attrs)
         userNameNode.maximumNumberOfLines = 0
         userNameNode.truncationMode = .byTruncatingTail
-        imageNode.url = feed.image
-        imageNode.style.preferredSize = CGSize(width: 320, height: 200)
+        
+        imageNode.url = URL(string: "https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg")!
+        imageNode.shouldCacheImage = false
+        imageNode.style.preferredSize = CGSize(width: 320, height: Int.random(in: 200...500))
         imageNode.contentMode = UIView.ContentMode.scaleAspectFill
         imageNode.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         
