@@ -14,6 +14,7 @@
 		D0B4F49F21CCD312006D871D /* FeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4F49E21CCD312006D871D /* FeedTableVC.swift */; };
 		D0B4F4A421CCD313006D871D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A321CCD313006D871D /* Assets.xcassets */; };
 		D0B4F4A721CCD313006D871D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */; };
+		D0CDDC6821CE0D0C007FAEF2 /* FeedRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CDDC6721CE0D0C007FAEF2 /* FeedRandomGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D0B4F4A321CCD313006D871D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0B4F4A621CCD313006D871D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0B4F4A821CCD313006D871D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CDDC6721CE0D0C007FAEF2 /* FeedRandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRandomGenerator.swift; sourceTree = "<group>"; };
 		E69FEC2B93466ECB34F1ACF8 /* Pods-TryTexture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryTexture.release.xcconfig"; path = "Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				D0B4F49E21CCD312006D871D /* FeedTableVC.swift */,
 				D0B4F4A321CCD313006D871D /* Assets.xcassets */,
 				D0B4F4A521CCD313006D871D /* LaunchScreen.storyboard */,
+				D0CDDC6721CE0D0C007FAEF2 /* FeedRandomGenerator.swift */,
 			);
 			path = TryTexture;
 			sourceTree = "<group>";
@@ -168,9 +171,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TryTexture/Pods-TryTexture-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
@@ -180,9 +180,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
@@ -222,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CDDC6821CE0D0C007FAEF2 /* FeedRandomGenerator.swift in Sources */,
 				D0B4F49F21CCD312006D871D /* FeedTableVC.swift in Sources */,
 				D0B4F49D21CCD312006D871D /* AppDelegate.swift in Sources */,
 				D085507C21CCFEF6005E4728 /* FeedCellNode.swift in Sources */,

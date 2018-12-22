@@ -8,11 +8,11 @@
 
 import UIKit
 import AsyncDisplayKit
-import Fakery
 
 struct FeedModel {
     let text: String
     let image: URL?
+    let backgroundColor: UIColor
 }
 
 class FeedTableVC: ASViewController<ASTableNode> {
@@ -20,22 +20,10 @@ class FeedTableVC: ASViewController<ASTableNode> {
     private let tableNode = ASTableNode()
     
     private var feedData: [FeedModel] = []
-    private let faker = Faker(locale: "en")
+    private let feedGenerator = FeedRandomGenerator()
     private var isAddingData = false
     private var didScroll = false
-    
-    let feedGenerator = FeedModelGenerator()
-    
-    let color: [UIColor] = [
-        .purple,
-        .blue,
-        .white,
-        .yellow,
-        .red,
-        .brown,
-        .gray
-    ]
-    
+  
     init() {
         super.init(node: tableNode)
         tableNode.delegate = self
@@ -52,26 +40,24 @@ class FeedTableVC: ASViewController<ASTableNode> {
         node.backgroundColor = .white
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        fetchFeed { indexPaths in
-            self.insertRow(indexPaths: indexPaths)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchFeed()
     }
     
-    private func fetchFeed(completion: @escaping (([IndexPath]) -> ())) {
+    private func fetchFeed() {
         if isAddingData { return }
         DispatchQueue.global(qos: .background).async {
             self.isAddingData = true
-            
+          
             let newData = self.feedGenerator.generateData()
             self.feedData.append(contentsOf: newData)
             let indexPaths = self.mapIndexPaths(newData: newData)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.5...1)) {
-                completion(indexPaths)
+                self.insertRow(indexPaths: indexPaths)
+                self.isAddingData = false
             }
-            self.isAddingData = false
         }
     }
     
@@ -106,7 +92,6 @@ extension FeedTableVC: ASTableDelegate, ASTableDataSource {
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         let cellNode = FeedCellNode()
         cellNode.configure(row: indexPath.row, feed: feedData[indexPath.row])
-        cellNode.backgroundColor = color[Int.random(in: 0..<color.count)]
         return cellNode
     }
     
@@ -115,9 +100,7 @@ extension FeedTableVC: ASTableDelegate, ASTableDataSource {
         
         if row == feedData.count - 3 {
             if didScroll {
-                fetchFeed { indexPaths in
-                    self.insertRow(indexPaths: indexPaths)
-                }
+                fetchFeed()
             }
         }
     }

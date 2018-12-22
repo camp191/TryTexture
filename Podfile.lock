@@ -1,8 +1,4 @@
 PODS:
-  - Alamofire (4.8.0)
-  - AlamofireImage (3.5.0):
-    - Alamofire (~> 4.8)
-  - Fakery (3.4.0)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
     - PINCache/Core (= 3.0.1-beta.6)
@@ -27,29 +23,21 @@ PODS:
     - Texture/Core
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.5)
-  - Fakery
   - Texture
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
-    - AlamofireImage
-    - Fakery
     - PINCache
     - PINOperation
     - PINRemoteImage
     - Texture
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  Fakery: 885e894a3e7c392e1da96c6e46a1abe5a0b28686
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 30cc217d9d583729e0b33c9149c71dfc611eb469
+PODFILE CHECKSUM: f06162407e0f991e36769d767451411cdc0628f7
 
 COCOAPODS: 1.5.3
