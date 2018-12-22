@@ -24,6 +24,8 @@ class FeedTableVC: ASViewController<ASTableNode> {
     private var isAddingData = false
     private var didScroll = false
     
+    let feedGenerator = FeedModelGenerator()
+    
     let color: [UIColor] = [
         .purple,
         .blue,
@@ -48,7 +50,6 @@ class FeedTableVC: ASViewController<ASTableNode> {
         super.viewDidLoad()
         self.title = "Good"
         node.backgroundColor = .white
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +64,7 @@ class FeedTableVC: ASViewController<ASTableNode> {
         DispatchQueue.global(qos: .background).async {
             self.isAddingData = true
             
-            let newData = self.generateData()
+            let newData = self.feedGenerator.generateData()
             self.feedData.append(contentsOf: newData)
             let indexPaths = self.mapIndexPaths(newData: newData)
             
@@ -88,17 +89,6 @@ class FeedTableVC: ASViewController<ASTableNode> {
         }
         
         return indexPaths
-    }
-    
-    private func generateData() -> [FeedModel] {
-        var newFeeds: [FeedModel] = []
-        for _ in 1...10 {
-            let text = self.faker.lorem.paragraphs(amount: Int.random(in: 4...7))
-            let url = URL(string: self.faker.internet.image(width: 320, height: 200))
-            let feedModel = FeedModel(text: text, image: url)
-            newFeeds.append(feedModel)
-        }
-        return newFeeds
     }
     
 }
