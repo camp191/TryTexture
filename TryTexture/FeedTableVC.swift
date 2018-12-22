@@ -23,7 +23,7 @@ class FeedTableVC: ASViewController<ASTableNode> {
     private let feedGenerator = FeedRandomGenerator()
     private var isAddingData = false
     private var didScroll = false
-    
+  
     init() {
         super.init(node: tableNode)
         tableNode.delegate = self
@@ -49,6 +49,7 @@ class FeedTableVC: ASViewController<ASTableNode> {
         if isAddingData { return }
         DispatchQueue.global(qos: .background).async {
             self.isAddingData = true
+          
             let newData = self.feedGenerator.generateData()
             self.feedData.append(contentsOf: newData)
             let indexPaths = self.mapIndexPaths(newData: newData)
